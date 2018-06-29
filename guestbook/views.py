@@ -31,26 +31,23 @@ def delete(request):
     # 기존 >> print("request.REQUEST.get('name'): ", request.REQUEST.get('name'))
     # 최신 >> print("request.POST.get('name', request.GET.get('name')): ", request.POST.get('name', request.GET.get('name')))
     guestbook.name = request.POST.get('name', request.GET.get('name'))
+    guestbook.regdate = request.POST.get('regdate')
     guestbook.password = request.POST.get('password')
 
-    print(guestbook)
     # objects 에 필터를 적용 할 수 있다.
-    # print(Guestbook.objects.filter(name=request).delete())
-    instance = Guestbook.objects.filter(name=guestbook.name).get()
-    print("instance.password:", instance.password)
-    if guestbook.password == instance.password :
-        instance.delete()
-        messages.info(request, 'Your Post has been deleted successfully!')
-        print("Delete Complete!")
-    else :
-        messages.info(request, 'Passwords do not match!')
+    instance = Guestbook.objects.filter(name=guestbook.name).filter(password=guestbook.password)#.filter(regdate=request.POST['regdate'])
+    if len(instance) == 0:
         print("비밀번호가 일치하지 않습니다.")
+        return HttpResponseRedirect('/user/loginform?result=false')
+    else:
+        instance.delete()
 
     guestbook_list = Guestbook.objects.all().order_by('-regdate')
     context = {'guestbook_list' : guestbook_list}
     return render(request, 'guestbook/list.html', context)
 
 def deleteform(request):
-    guestbook_name = request.POST.get('name', request.GET.get('name'))
-    context = {'guestbook_name' : guestbook_name }
+    guestbookName = request.POST.get('name', request.GET.get('name'))
+    guestbookRegdate = request.POST.get('regdate', request.GET.get('regdate'))
+    context = {'guestbookName' : guestbookName, 'guestbookRegdate' : guestbookRegdate }
     return render(request, 'guestbook/deleteform.html', context)
