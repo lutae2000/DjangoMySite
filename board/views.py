@@ -49,6 +49,8 @@ def write(request):
     return HttpResponseRedirect('/board')
 
 def writeform(request):
+    if request.session['authuser'] is None :
+        return HttpResponseRedirect('/user/loginform')
     context = {'name' : 'TEST_name'}
     return render(request, 'board/write.html', context)
 
