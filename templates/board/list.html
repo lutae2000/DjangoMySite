@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load mathfilters %}
+<html>
+<head>
+<title>mysite</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<h1>MySite</h1>
+			<ul>
+				<li><a href="/user/login">로그인</a><li>
+				<li><a href="/user/join">회원가입</a><li>
+				<li><a href="/user/modify">회원정보수정</a><li>
+				<li><a href="/user/logout">로그아웃</a><li>
+				<li>님 안녕하세요 ^^;</li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="board">
+				<form id="search_form" action="" method="post">
+					<input type="text" id="kwd" name="kwd" value="">
+					<input type="submit" value="찾기">
+				</form>
+
+
+				<table class="tbl-ex">
+					<tr>
+						<th>번호</th>
+						<th>제목</th>
+						<th>글쓴이</th>
+						<th>조회수</th>
+						<th>작성일</th>
+						<th>&nbsp;</th>
+					</tr>
+					<!-- board 리스트 -->
+					{% for board in board_list %}
+						<tr>
+							<td>{{ board.id }}</td>
+							<td><a href="/board/view?id={{ board.id }}">{{ board.title }}</td>
+							<td>{{ board.name }}</td>
+							<td>{{ board.count }}</td>
+							<td>{{ board.regdate|date:'Y-m-d h:i:s' }}</td>
+							<td><a href="/board/delete?id={{ board.id }}" class="del">삭제</a></td>
+						</tr>
+					{% endfor %}
+				</table>
+				<div class="bottom">
+					<a href="writeform/" id="new-book">글쓰기</a>
+				</div>				
+			</div>
+		</div>
+		<div id="navigation">
+			<ul>
+				<li><a href="/">박두리</a></li>
+				<li><a href="/guestbook">방명록</a></li>
+				<li><a href="/board">게시판</a></li>
+			</ul>
+		</div>
+		<div id="footer">
+			<p>(c)opyright 2015, 2016, 2017, 2018</p>
+		</div>
+	</div>
+</body>
+</html>
