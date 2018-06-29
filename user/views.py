@@ -14,6 +14,8 @@ def join(request):
 
     return HttpResponseRedirect('/user/joinsuccess')
 
+def joinsuccess(request):
+    return render(request, 'user/joinsuccess.html')
 
 def joinform(request):
     return render(request, 'user/joinform.html')
@@ -22,7 +24,7 @@ def joinform(request):
 def login(request):
     result = User.objects.filter(email=request.POST['email']).filter(password=request.POST['password'])
     if len(result) == 0:
-        return HttpResponseRedirect('/user/loginform.html?result=false')
+        return HttpResponseRedirect('/user/loginform?result=false')
     authuser = result[0]
     request.session['authuser'] = model_to_dict(authuser)
     # return HttpResponse(authuser)
@@ -31,10 +33,6 @@ def login(request):
 def logout(request):
     del request.session['authuser']
     return HttpResponseRedirect('/')
-
-def joinsuccess(request):
-    return render(request, 'user/joinsuccess.html')
-
 
 def loginform(request):
     return render(request, 'user/loginform.html')

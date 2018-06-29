@@ -130,3 +130,4 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 STATIC_URL = '/assets/'
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
