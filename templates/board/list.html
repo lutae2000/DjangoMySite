@@ -29,7 +29,12 @@
 							<td>{{ board.name }}</td>
 							<td>{{ board.count }}</td>
 							<td>{{ board.regdate|date:'Y-m-d h:i:s' }}</td>
-							<td><a href="/board/delete?id={{ board.id }}" class="del">삭제</a></td>
+
+							<td>
+								{% if request.session.authuser.id == board.user_id %}
+								<a href="/board/delete?id={{ board.id }}" class="del">삭제</a>
+								{% endif %}
+							</td>
 						</tr>
 					{% endfor %}
 				</table>

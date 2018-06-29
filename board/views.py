@@ -43,6 +43,7 @@ def write(request):
         board.name = request.POST['name']
         board.title = request.POST['title']
         board.contents = request.POST['contents']
+        board.user_id = request.POST['user_id']
 
         board.save()
 
@@ -51,7 +52,8 @@ def write(request):
 def writeform(request):
     if request.session['authuser'] is None :
         return HttpResponseRedirect('/user/loginform')
-    context = {'name' : 'TEST_name'}
+
+    context = {'boardName' : request.session['authuser']['name'], 'boardUser_id' : request.session['authuser']['id']}
     return render(request, 'board/write.html', context)
 
 

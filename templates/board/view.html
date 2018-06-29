@@ -15,6 +15,10 @@
 						<td>{{ board.title }}</td>
 					</tr>
 					<tr>
+						<td class="label">작성자</td>
+						<td>{{ board.name }}</td>
+					</tr>
+					<tr>
 						<td class="label">내용</td>
 						<td>
 							<div class="view-content">{{ board.contents }}
@@ -24,7 +28,9 @@
 				</table>
 				<div class="bottom">
 					<a href="/board">글목록</a>
+					{% if request.session.authuser.id == board.user_id %}
 					<a href="/board/modifyform?id={{ board.id }}">글수정</a>
+					{% endif %}
 				</div>
 			</div>
 {% endblock %}
