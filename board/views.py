@@ -38,7 +38,7 @@ def modifyform(request):
     return render(request, 'board/modify.html', context)
 
 def write(request):
-    if request.POST.get('name') is not None :
+    if request.POST.get('user_id', request.GET.get('user_id')) is not None :
         board = Board()
         board.name = request.POST['name']
         board.title = request.POST['title']
@@ -50,7 +50,8 @@ def write(request):
     return HttpResponseRedirect('/board')
 
 def writeform(request):
-    if request.session['authuser'] is None :
+    print("idididid: ", request.POST.get('id', request.GET.get('id')))
+    if request.POST.get('id', request.GET.get('id')) == '' :
         return HttpResponseRedirect('/user/loginform')
 
     context = {'boardName' : request.session['authuser']['name'], 'boardUser_id' : request.session['authuser']['id']}
