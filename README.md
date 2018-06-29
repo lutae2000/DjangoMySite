@@ -24,7 +24,7 @@ mysqlclient v1.3.12 와 django-mathfilters v0.4.0 를 사용했습니다.
   
 2.2.4 삭제 결과
 
-  ![삭제](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_4.JPG" width="700px" height="430px" />
+  ![삭제](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_4.JPG)
 
 2.3.1 게시판 리스트 및 글쓰기
 
