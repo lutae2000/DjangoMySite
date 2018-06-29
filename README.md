@@ -1,34 +1,58 @@
 DjangoMySite
 ----------
 #### 1. 프로젝트 내용
->> 게시판, 방명록, 회원등록 기능을 가지고 있습니다. Python의 웹 프레임워크 Django v2.0.6,
+> 게시판, 방명록, 회원등록 기능을 가지고 있습니다. Python의 웹 프레임워크 Django v2.0.6,
 mysqlclient v1.3.12 와 django-mathfilters v0.4.0 를 사용했습니다.
 
 ****
 #### 2. 프로젝트 결과
-2.1
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/guestbook_1.JPG" width="700px" height="600px" />
-2.2
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/guestbook_2.JPG" width="700px" height="600px" />
-2.3
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/guestbook_3.JPG" width="700px" height="600px" />
-2.4
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/guestbook_4.JPG" width="700px" height="600px" />
+2.1 메인화면
 
-2.5
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_1.JPG" width="700px" height="600px" />
-2.6
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_2.JPG" width="700px" height="600px" />
-2.7
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_3.JPG" width="700px" height="600px" />
-2.8
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_4.JPG" width="700px" height="600px" />
-2.9
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_5.JPG" width="700px" height="350px" />
-2.10
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_6.JPG" width="700px" height="600px" />
-2.11
-<img src="https://github.com/twooopark/DjangoMySite/blob/master/board_7.JPG" width="700px" height="350px" />
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/main.JPG" width="700px" height="500px" />
+
+2.2.1 방명록 리스트
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_1.JPG" width="700px" height="500px" />
+  
+2.2.2 등록 확인
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_2.JPG" width="700px" height="500px" />
+  
+2.2.3 삭제 (비밀번호 체크)
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_3.JPG" width="700px" height="500px" />
+  
+2.2.4 삭제 결과
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_4.JPG" width="700px" height="430px" />
+
+2.3.1 게시판 리스트 및 글쓰기
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_1.JPG" width="700px" height="500px" />
+
+2.3.2 글쓰기
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_2.JPG" width="700px" height="500px" />
+  
+2.3.3 글쓰기 결과
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_3.JPG" width="700px" height="500px" />
+  
+2.3.4 삭제 결과
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_4.JPG" width="700px" height="500px" />
+
+2.3.5 글 수정
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_5.JPG" width="700px" height="350px" />
+  
+2.3.6 글 수정
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_6.JPG" width="700px" height="500px" />
+  
+2.3.7 글 수정 결과
+
+  <img src="https://github.com/twooopark/DjangoMySite/blob/master/결과/board_7.JPG" width="700px" height="350px" />
 
 ****
 
