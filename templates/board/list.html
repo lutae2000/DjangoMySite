@@ -2,11 +2,17 @@
 {% load mathfilters %}
 {% block css_link %}
 <link href="/assets/css/board.css" rel="stylesheet" type="text/css">
+<style>
+.pagination li {
+	display: inline;
+	padding: 5px;
+  }
+</style>
 {% endblock %}
 
 {% block content %}
 			<div id="board">
-				<form id="search_form" action="" method="post">
+				<form id="search_form" action="/board" method="get">
 					<input type="text" id="kwd" name="kwd" value="">
 					<input type="submit" value="찾기">
 				</form>
@@ -24,7 +30,8 @@
 					<!-- board 리스트 -->
 					{% for board in board_list %}
 						<tr>
-							<td>{{ board_list.count|add:1|sub:forloop.counter }}</td>
+							<!--<td>{{ board_list.count|add:1|sub:forloop.counter }}</td>-->
+							<td>{{ board.id }}</td>
 							<td><a href="/board/view?id={{ board.id }}">{{ board.title }}</td>
 							<td>{{ board.name }}</td>
 							<td>{{ board.count }}</td>
@@ -38,6 +45,29 @@
 						</tr>
 					{% endfor %}
 				</table>
+
+				{% if board_list.has_other_pages %}
+					<ul class="pagination">
+						{% if board_list.has_previous %}
+							<li><a href="?page={{ board_list.previous_page_number }}&kwd={{ kwd }}"><</a></li>
+						{% else %}
+							<li class="disabled"><span><</span></li>
+						{% endif %}
+						{% for i in board_list.paginator.page_range %}
+			  				{% if board_list.number == i %}
+								<li class="active"><span>{{ i }} <!--span class="sr-only">(current)</span--></span></li>
+							{% else %}
+								<li><a href="?page={{ i }}&kwd={{ kwd }}">{{ i }}</a></li>
+				  			{% endif %}
+						{% endfor %}
+						{% if board_list.has_next %}
+							<li><a href="?page={{ board_list.next_page_number }}&kwd={{ kwd }}">></a></li>
+						{% else %}
+							<li class="disabled"><span>></span></li>
+						{% endif %}
+					</ul>
+				{% endif %}
+
 				<div class="bottom">
 					<a href="writeform?id={{ request.session.authuser.id }}" id="new-book">글쓰기</a>
 				</div>				

@@ -1,19 +1,33 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 from .models import Board
 
 # Create your views here.
 def index(request):
-    board = Board.objects.all().order_by('-id')
-    data = {'board_list': board}
-    return render(request, 'board/list.html', data)
+    kwd = request.GET.get('kwd')
+    if kwd is not None:
+        board_list = Board.objects.filter(title__icontains=kwd).order_by('-id')
+    else:
+        board_list = Board.objects.filter().order_by('-id')
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(board_list, 5)
+    try:
+        board_list = paginator.page(page)
+    except PageNotAnInteger:
+        board_list = paginator.page(1)
+    except EmptyPage:
+        board_list = paginator.page(paginator.num_pages)
+    return render(request, 'board/list.html', {'board_list': board_list, 'kwd':kwd})
 
 def view(request):
     board = Board()
     board.id = request.POST.get('id', request.GET.get('id'))
     instance = Board.objects.filter(id=board.id).get()
-    print("instance:", instance)
-    context = {'board' : instance}
+    context = {'board' : instance }
     return render(request, 'board/view.html', context)
 
 def modify(request):
@@ -21,7 +35,6 @@ def modify(request):
         board = Board()
         board.id = request.POST.get('id')
 
-        print("boardid: ",board.id)
         board.title = request.POST['title']
         board.contents = request.POST['contents']
         Board.objects.filter(id=board.id).update(title=board.title, contents=board.contents)
@@ -50,7 +63,6 @@ def write(request):
     return HttpResponseRedirect('/board')
 
 def writeform(request):
-    print("idididid: ", request.POST.get('id', request.GET.get('id')))
     if request.POST.get('id', request.GET.get('id')) == '' :
         return HttpResponseRedirect('/user/loginform')
 
@@ -65,3 +77,4 @@ def delete(request):
     instance.delete()
 
     return HttpResponseRedirect('/board')
+
