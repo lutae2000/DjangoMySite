@@ -27,6 +27,7 @@ def view(request):
     board = Board()
     board.id = request.POST.get('id', request.GET.get('id'))
     instance = Board.objects.filter(id=board.id).get()
+    Board.objects.filter(id=board.id).update(count=instance.count+1)
     context = {'board' : instance }
     return render(request, 'board/view.html', context)
 
