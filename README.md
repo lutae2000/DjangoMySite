@@ -8,51 +8,39 @@ mysqlclient v1.3.12 와 django-mathfilters v0.4.0 를 사용했습니다.
 #### 2. 프로젝트 결과
 2.1 메인화면
 
- ![메인화면](https://github.com/twooopark/DjangoMySite/blob/master/결과/main.JPG)
+ ![메인화면](https://github.com/twooopark/DjangoMySite/blob/master/결과/main_1.JPG)
 
-2.2.1 방명록 리스트
+ ![메인화면](https://github.com/twooopark/DjangoMySite/blob/master/결과/main_2.JPG)
+
+ ![메인화면](https://github.com/twooopark/DjangoMySite/blob/master/결과/main_3.JPG)
+
+2.2 방명록
 
   ![방명록](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_1.JPG)
-  
-2.2.2 등록 확인
 
   ![등록](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_2.JPG)
-  
-2.2.3 삭제 (비밀번호 체크)
 
   ![삭제](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_3.JPG)
-  
-2.2.4 삭제 결과
 
   ![삭제](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_4.JPG)
 
-2.3.1 게시판 리스트 및 글쓰기
+2.3 게시판
 
   ![게시판](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_1.JPG)
 
-2.3.2 글쓰기
-
   ![글쓰기](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_2.JPG)
-  
-2.3.3 글쓰기 결과
 
   ![글쓰기](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_3.JPG)
-  
-2.3.4 삭제 결과
 
   ![삭제](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_4.JPG)
 
-2.3.5 글 수정
-
   ![글수정](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_5.JPG)
-  
-2.3.6 글 수정
 
   ![글수정](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_6.JPG)
-  
-2.3.7 글 수정 결과
 
   ![글수정](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_7.JPG)
+
+  ![찾기](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_8.JPG)
 
 ****
 
