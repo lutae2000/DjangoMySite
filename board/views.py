@@ -8,6 +8,8 @@ from .models import Board
 # Create your views here.
 def index(request):
     kwd = request.GET.get('kwd')
+    if kwd == 'None':
+        kwd = None;
     if kwd is not None:
         board_list = Board.objects.filter(title__icontains=kwd).order_by('-id')
     else:
