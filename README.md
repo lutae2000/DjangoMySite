@@ -24,7 +24,7 @@ mysqlclient v1.3.12 와 django-mathfilters v0.4.0 를 사용했습니다.
 
   ![삭제](https://github.com/twooopark/DjangoMySite/blob/master/결과/guestbook_4.JPG)
 
-2.3 게시판
+2.3.1 게시판
 
   ![게시판](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_1.JPG)
 
@@ -39,6 +39,8 @@ mysqlclient v1.3.12 와 django-mathfilters v0.4.0 를 사용했습니다.
   ![글수정](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_6.JPG)
 
   ![글수정](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_7.JPG)
+
+2.3.2 찾기 (T로 검색)
 
   ![찾기](https://github.com/twooopark/DjangoMySite/blob/master/결과/board_8.JPG)
 
